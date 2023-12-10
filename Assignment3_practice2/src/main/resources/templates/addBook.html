@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Add a book </h1>
+	<form method="POST" th:action="@{/saveBook}" th:object="${book}">
+		Title: <input type="text" th:field="*{title}"><br/>
+		Author: <input type="text" th:field="*{authors}"><br/>
+		<input type="submit" value="save">
+	</form>
+
+</body>
+</html>

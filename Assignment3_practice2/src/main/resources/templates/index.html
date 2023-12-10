@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head><title>Car List</title>
+<script th:src="@{/bookjs.js}"></script>
+</head>
+<body>
+<h1>Book List</h1>
+
+<a href="@{/addbook}">Add book</a>
+<ol>
+<li th:each='b: ${books}'>
+<a href="#" th:onclick="'getBookAndReview(' + ${b.id} + ')'" th:text="${b.title}"></a>
+
+</li>
+</ol>
+<hr/><div th:id="bookdetails"></div>
+<br/><div th:id="reviewdetails"></div>
+</body>
+</html>
